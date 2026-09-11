@@ -16,12 +16,12 @@ export function AppNav({ email }: { email?: string }) {
   return (
     <header className="border-b border-border bg-card/70 backdrop-blur">
       <div className="mx-auto flex max-w-5xl flex-wrap items-center gap-4 px-6 py-4">
-        <Link to="/dashboard" className="font-display text-lg font-bold tracking-tight">
+        <Link to="/skills" className="font-display text-lg font-bold tracking-tight">
           Skill<span className="text-gradient">Swap</span>
         </Link>
         <nav className="flex items-center gap-1 text-sm">
           <Link
-            to="/dashboard"
+            to="/skills"
             className="rounded-full px-3 py-1.5 text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground [&.active]:bg-accent [&.active]:text-accent-foreground"
           >
             My skills

@@ -51,7 +51,7 @@ function Landing() {
           {signedIn ? "See my skill chains" : "Sign in or create an account"}
         </Link>
         <Link
-          to={signedIn ? "/dashboard" : "/auth"}
+          to={signedIn ? "/skills" : "/auth"}
           className="rounded-full border border-border px-6 py-3 text-sm font-semibold transition-colors hover:bg-secondary"
         >
           {signedIn ? "My skills" : "How it works"}

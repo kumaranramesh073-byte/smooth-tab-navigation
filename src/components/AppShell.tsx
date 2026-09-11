@@ -2,13 +2,10 @@ import { useState, type ReactNode } from "react";
 import { Link, useNavigate } from "@tanstack/react-router";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import {
-  LayoutDashboard,
   Users2,
   Link2,
   Target,
-  Sparkles,
   MessageSquare,
-  GraduationCap,
   Compass,
   FolderKanban,
   Award,
@@ -20,13 +17,10 @@ import { supabase } from "@/integrations/supabase/client";
 import { currentUserQuery, profilesQuery, initials } from "@/lib/data";
 
 const NAV = [
-  { to: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
+  { to: "/skills", label: "My skills", icon: Target },
   { to: "/matches", label: "Direct matches", icon: Users2 },
   { to: "/chains", label: "Skill chains", icon: Link2 },
-  { to: "/gap", label: "Skill gap analyzer", icon: Sparkles },
-  { to: "/mentor", label: "AI mentor", icon: GraduationCap },
   { to: "/discover", label: "Discover", icon: Compass },
-  { to: "/skills", label: "My skills", icon: Target },
   { to: "/goals", label: "Learning goals", icon: Target },
   { to: "/messages", label: "Messages", icon: MessageSquare },
   { to: "/projects", label: "Projects", icon: FolderKanban },
@@ -58,7 +52,7 @@ export function AppShell({
 
   const sidebar = (
     <div className="flex h-full flex-col gap-6 p-5">
-      <Link to="/dashboard" className="font-display text-xl font-bold tracking-tight">
+      <Link to="/skills" className="font-display text-xl font-bold tracking-tight">
         Skill<span className="text-gradient">Swap</span>
       </Link>
 

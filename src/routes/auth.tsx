@@ -35,7 +35,7 @@ function AuthPage() {
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data }) => {
-      if (data.session) navigate({ to: "/dashboard", replace: true });
+      if (data.session) navigate({ to: "/skills", replace: true });
     });
   }, [navigate]);
 
@@ -57,11 +57,11 @@ function AuthPage() {
       if (error) setError(error.message);
       else if (!data.session)
         setMessage("Almost there — check your inbox and click the confirmation link to finish.");
-      else navigate({ to: "/dashboard", replace: true });
+      else navigate({ to: "/skills", replace: true });
     } else {
       const { error } = await supabase.auth.signInWithPassword({ email, password });
       if (error) setError(error.message);
-      else navigate({ to: "/dashboard", replace: true });
+      else navigate({ to: "/skills", replace: true });
     }
     setBusy(false);
   }
