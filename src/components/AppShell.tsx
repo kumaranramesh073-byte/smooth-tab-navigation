@@ -38,6 +38,7 @@ export function AppShell({
   children: ReactNode;
 }) {
   const [open, setOpen] = useState(false);
+  useLiveData();
   const navigate = useNavigate();
   const queryClient = useQueryClient();
   const { data: user } = useQuery(currentUserQuery);
