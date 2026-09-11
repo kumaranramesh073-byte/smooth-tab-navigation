@@ -14,6 +14,7 @@ import {
   LogOut,
 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import { useLiveData } from "@/hooks/useLiveData";
 import { currentUserQuery, profilesQuery, initials } from "@/lib/data";
 
 const NAV = [
@@ -37,6 +38,7 @@ export function AppShell({
   children: ReactNode;
 }) {
   const [open, setOpen] = useState(false);
+  useLiveData();
   const navigate = useNavigate();
   const queryClient = useQueryClient();
   const { data: user } = useQuery(currentUserQuery);
