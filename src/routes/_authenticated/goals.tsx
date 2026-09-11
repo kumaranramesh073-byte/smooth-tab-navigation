@@ -185,7 +185,10 @@ function GoalsPage() {
                       className="rounded-full border border-border px-3 py-1.5 text-xs"
                       value={g.status}
                       onChange={(e) =>
-                        update.mutate({ id: g.id, patch: { status: e.target.value } })
+                        update.mutate({
+                          id: g.id,
+                          patch: { status: e.target.value as LearningGoal["status"] },
+                        })
                       }
                     >
                       <option value="active">Active</option>
