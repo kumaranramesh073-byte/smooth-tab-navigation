@@ -65,7 +65,15 @@ function ChainsPage() {
   );
 }
 
-function Group({ title, chains, youId }: { title: string; chains: Chain[]; youId?: string }) {
+function Group({
+  title,
+  chains,
+  youId,
+}: {
+  title: string;
+  chains: Chain[];
+  youId: string | undefined;
+}) {
   if (chains.length === 0) return null;
   return (
     <section>
@@ -103,7 +111,7 @@ function Group({ title, chains, youId }: { title: string; chains: Chain[]; youId
   );
 }
 
-function ChainCircle({ chain, youId }: { chain: Chain; youId?: string }) {
+function ChainCircle({ chain, youId }: { chain: Chain; youId: string | undefined }) {
   const size = 200;
   const r = 72;
   const c = size / 2;

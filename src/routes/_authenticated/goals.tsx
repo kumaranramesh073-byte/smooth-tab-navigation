@@ -12,7 +12,7 @@ import {
   inputClass,
   btnPrimary,
 } from "@/components/ui-bits";
-import { currentUserQuery, goalsQuery } from "@/lib/data";
+import { currentUserQuery, goalsQuery, type LearningGoal } from "@/lib/data";
 
 export const Route = createFileRoute("/_authenticated/goals")({
   head: () => ({
@@ -68,7 +68,13 @@ function GoalsPage() {
   });
 
   const update = useMutation({
-    mutationFn: async ({ id, patch }: { id: string; patch: Record<string, unknown> }) => {
+    mutationFn: async ({
+      id,
+      patch,
+    }: {
+      id: string;
+      patch: Partial<Pick<LearningGoal, "priority" | "progress" | "status">>;
+    }) => {
       const { error } = await supabase.from("learning_goals").update(patch).eq("id", id);
       if (error) throw new Error(error.message);
     },
